@@ -1,0 +1,68 @@
+<div class="container">
+  <center><h1>#BLANK!#</h1></center>
+  <form action="/user/<%= @user.id %>/post" method="post">
+    <p>Put your Title</p>
+      <input type="text" name="post[title]" placeholder="title">
+        <br><br>
+    <p>Description</p>
+      <textarea name= "post[description]" rows= 10 cols= 55 placeholder="say something! say what you want to say! or else you're #BLANK!"></textarea>
+        <br><br>
+    <center>
+      <input type="submit" value="Submit">
+    </center>
+        <br>
+  </form>
+</div>
+
+
+    <div class="container">
+
+      <h1>News Feed</h1>
+      <br>
+      <form action="/user/<%= @user.id%>/post" method="get">
+          <input name="_method" type="hidden" value="add" />
+          <input type= "submit" value= "Add new">
+      </form>
+      <br><br>
+
+      <hr><% unless @posts.nil? %>
+        <p><% @posts.each do |post| %>
+          <br>
+
+            <form action="" method="get">
+              <p align="right">
+            <input type="submit" value="Edit">
+              </p>
+            </form>
+
+          <h4><%= post.title %></h4><br>
+
+          <p><%= post.description %></p>
+
+        <br>
+          <form action="" method="get">
+              <p align="right">
+            <input type="submit" value="Delete">
+              </p>
+          </form>
+          <br>
+      <hr></p>
+          <br>
+
+
+        <% end %>
+      <% end %>
+
+        <center>
+          <form action="/user/<%= @user.id%>/view_all" method="get">
+            <input type="submit" value="View post">
+          </form>
+          <br>
+
+          <form action="/" method="get">
+            <input type="submit" value="log out">
+          </form>
+          <br>
+        </center>
+      </div>
+

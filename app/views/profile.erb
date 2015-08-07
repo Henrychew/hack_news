@@ -1,0 +1,35 @@
+<div class="container">
+    <center>
+      <h1><%= @user.name %></h1>
+    </center>
+      <h2>About Me</h2><br>
+
+        <form action="/user/<%= @user.id %>/post" method="get">
+          <p align="left">
+          <input type="submit" value="Create a new post">
+          </p>
+        </form>
+        <br>
+
+
+        <b><h4>#Email#</h4></b><br>
+            <%= @user.email %><br><br><br><br>
+        <b><h4>##Gender##</h4></b><br>
+            <%= @user.gender %><br><br><br><br>
+        <b><h4>###Birthdate###</h4></b><br>
+            <%= @user.birthdate %><br><br><br><br>
+        <b><h4>###Country###</h4></b><br>
+            <%= @user.country %><br><br><br><br>
+
+
+    <center>
+      <form action="/view_all" method="get">
+        <input type="submit" value="View post">
+      </form>
+      <br>
+      <form action="/" method="get">
+        <input type="submit" value="Log out">
+      </form>
+
+    </center>
+</div>

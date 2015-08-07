@@ -1,0 +1,47 @@
+
+<div class="container">
+      <br><br>
+
+  <center>
+    <h2>News Feed</h2>
+  </center>
+      <br>
+       <form action="/user/<%= @user.id %>/post" method="get">
+          <p align="left">
+         <input type="submit" value="Back">
+          </p>
+       </form>
+          <br>
+
+
+
+    <% @posts.each do |post| %>
+          <hr>
+            <br><br>
+
+      Posted by :
+          <h3><%= post.user.name if post.user %></h3>
+          <h4><%= post.user.email if post.user %></h4>
+            <br><br>
+      Title :
+          <h5><%= post.title %></h5><br>
+
+          Description : <p><%= post.description %></p>
+                <form action="" method="get">
+                  <p align="right">
+                <input type="submit" value="Edit">
+                  </p>
+              </form>
+            <br>
+          </hr>
+    <% end %>
+
+
+
+    <center>
+        <form action="/" method="get">
+          <input type="submit" value="log out">
+        </form>
+    </center>
+</div>
+

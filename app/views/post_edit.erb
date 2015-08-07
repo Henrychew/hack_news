@@ -1,0 +1,15 @@
+<div class="container">
+  <center><h1>#BLANK!#</h1></center>
+  <form action="/user/<%= @user.id %>/post" method="post">
+    <p>Put your Title</p>
+      <input type="text" name="post[title]" placeholder="title">
+        <br><br>
+    <p>Description</p>
+      <textarea name= "post[description]" rows= 10 cols= 55 placeholder="say something! say what you want to say! or else you're #BLANK!"></textarea>
+        <br><br>
+    <center>
+      <input type="submit" value="Submit">
+    </center>
+        <br>
+  </form>
+</div>
